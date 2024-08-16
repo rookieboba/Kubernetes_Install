@@ -1,3 +1,4 @@
-# 모든 서버에
-# CentOs-Base.repo 설정
-# Kubernetes 설정
+모든 서버에
+
+CentOS-Base.repo 설정
+Kubernetes 설정
