@@ -1,0 +1,31 @@
+mkdir /etc/nginx
+
+cat << END > /etc/nginx/nginx.conf
+events {}
+stream {
+  upstream stream_backend {
+    least_conn;
+    server {master_IP1}:6443;
+    server {master_IP2}:6443;
+    server {master_IP3}:6443;
+
+    # 아래 세 줄처럼, master 서버의 IP 를 적어준다
+    #server 10.100.0.101:6443;
+    #server 10.100.0.102:6443;
+    #server 10.100.0.103:6443;
+
+}
+  server {
+    listen 6443;
+    proxy_pass stream_backend;
+    proxy_timeout 300s;
+    proxy_connect_timeout 1s;
+  }
+}
+END
+
+# 도커 컨테이너로 NGINX 를 실행하면서 LB 를 운영합니다. 그리고 간단하게 연결되는지만 TEST
+
+docker run --name proxy -v /etc/nginx/ginx.conf:/etc/nginx/nginx.conf:ro --restart=always -p
+6443:6443 -d nginx
+curl {IP1}:6443
