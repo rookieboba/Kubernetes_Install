@@ -9,10 +9,7 @@
 준비 후 아래 과정 진행
 
 [모든 서버] 
-1. /etc/yum.repos.d/CentOS-Base.repo 설정
-  - 기존 /etc/yum.repos.d/CentOS-Base.repo 와 github repo 차이 확인해보기
-
-2. /etc/hosts 설정 필수
+1. /etc/hosts 설정 필수
   - 위의 6대가 전부 등록되어 있어야 한다
 
 ```
@@ -28,19 +25,19 @@
 192.168.98.154 lb
 ```
 
-3. Kubernetes Install 적용
+2. Kubernetes Install 적용
  
 [lb 서버]
 
-4. multi-master 단일 진입점인 LoadBalancer 구성 (LB)
+3. multi-master 단일 진입점인 LoadBalancer 구성 (LB)
    - server ip 설정 주의 
 
 [master 서버]
 
-5. kubeadm 이용 HA 클러스터 구성
+4. kubeadm 이용 HA 클러스터 구성
 etcd 가 동기화 되게 하기 위한 작업
 
-5-1 ) [master1]
+4-1 ) [master1]
 ```
 kubeadm init --control-plane-endpoint "{로드벨런서 서버 hostname}:6443" --upload-certs
 예시) kubeadm init --control-plane-endpoint "lb:6443" --upload-certs
@@ -48,6 +45,6 @@ kubeadm init --control-plane-endpoint "{로드벨런서 서버 hostname}:6443" -
 결과로 출력되는 kubeadm join 명령어 줄 복사하기
 그 후, 다른 master 서버에서 붙여넣기 
 
-5-2) [master2]
+4-2) [master2]
 
-5-3) [master3]
+4-3) [master3]
