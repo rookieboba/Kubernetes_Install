@@ -1,3 +1,6 @@
+[환경]
+CentOS7
+
 [서버 구성]
 - master 서버 3대
   - master1 / master2 / master3
