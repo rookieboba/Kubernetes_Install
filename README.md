@@ -2,4 +2,6 @@
 
 1) /etc/yum.repos.d/CentOS-Base.repo 설정 적용.
 
-2) Kubernetes 설치 필수
+2) Kubernetes Install
+
+(선택) 3) multi-master 단일 진입점인 LoadBalancer (LB)
