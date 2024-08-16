@@ -1,15 +1,30 @@
-서버 구성
+[서버 구성]
 - master 서버 3대
+  - master1 / master2 / master3
 - worker 서버 2대
+  - worker1 / worker2
 - lb 서버 1대
-
+  - lb
+  
 준비 후 아래 과정 진행
 
 [모든 서버] 
-1. /etc/yum.repos.d/CentOS-Base.repo 설정 적용.
-  - 기존 /etc/yum.repos.d/CentOS-Base.repo 와 차이 확인해보기
+1. /etc/yum.repos.d/CentOS-Base.repo 설정
+  - 기존 /etc/yum.repos.d/CentOS-Base.repo 와 github repo 차이 확인해보기
 
 2. /etc/hosts 설정 필수
+  - 위의 6대가 전부 등록되어 있어야 한다
+
+예시)
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.98.149 master1
+192.168.98.150 master2
+192.168.98.151 master3
+192.168.98.152 worker1
+192.168.98.153 worker2
+192.168.98.154 lb
 
 3. Kubernetes Install 적용
  
