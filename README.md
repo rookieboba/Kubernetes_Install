@@ -15,7 +15,7 @@
 2. /etc/hosts 설정 필수
   - 위의 6대가 전부 등록되어 있어야 한다
 
-/*
+```
 예시)
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
@@ -26,7 +26,7 @@
 192.168.98.152 worker1
 192.168.98.153 worker2
 192.168.98.154 lb
-*/
+```
 
 3. Kubernetes Install 적용
  
