@@ -3,7 +3,7 @@
 - worker 서버 2대
 - lb 서버 1대
 
-설치 과정
+설치 순서
 
 [모든 서버] 
 1. /etc/yum.repos.d/CentOS-Base.repo 설정 적용.
