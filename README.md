@@ -39,3 +39,14 @@
 
 5. kubeadm 이용 HA 클러스터 구성
 etcd 가 동기화 되게 하기 위한 작업
+
+5-1 ) [master1]
+kubeadm init --control-plane-endpoint "lb.example.com:6443" --upload-certs
+
+
+결과로 출력되는 kubeadm join 명령어 줄 복사하기
+그 후, 다른 master 서버에서 붙여넣기 
+
+5-2) [master2]
+
+5-3) [master3]
