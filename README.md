@@ -14,5 +14,5 @@ lb 서버 1대입니다.
 3. multi-master 단일 진입점인 LoadBalancer 구성 (LB)
 
 [master]
-4. 
-# etcd 가 동기화 되게 하기 위한 작업
+4. kubeadm 이용 HA 클러스터 구성
+etcd 가 동기화 되게 하기 위한 작업
