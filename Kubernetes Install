@@ -56,5 +56,5 @@ systemctl enable containerd
 systemctl status containerd
 
 # 6) config.toml 파일 내 disabled_plugins = ["cri"] 주석 처리
-
-sed -i 's/^disabled_plugins = \["cri"\]/# &/' /etc/containerd/config.toml
+# 확실하지 않음
+# sed -i 's/^disabled_plugins = \["cri"\]/# &/' /etc/containerd/config.toml
