@@ -43,6 +43,7 @@ baseurl=http://vault.centos.org/centos/$releasever/centosplus/$basearch/
 gpgcheck=1
 enabled=0
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+EOF
 
 #Install Docker
 yum install -y yum-utils
